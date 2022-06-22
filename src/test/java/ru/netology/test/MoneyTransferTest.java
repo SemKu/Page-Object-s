@@ -32,7 +32,7 @@ public class MoneyTransferTest {
         int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val transferPage = dashboardPage.secondBill();
         val infoCard = DataHelper.getFirstCardInfo();
-        String amountValue = "";
+        String amountValue = "10000";
         transferPage.transfer(amountValue, infoCard);
         assertEquals(balanceFirstCard - Integer.parseInt(amountValue), dashboardPage.getFirstCardBalance());
         assertEquals(balanceSecondCard + Integer.parseInt(amountValue), dashboardPage.getSecondCardBalance());
@@ -45,7 +45,7 @@ public class MoneyTransferTest {
         int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val transferPage = dashboardPage.firstBill();
         val infoCard = DataHelper.getSecondCardInfo();
-        String amountValue = "";
+        String amountValue = "20001";
         transferPage.transfer(amountValue, infoCard);
         assertEquals(balanceFirstCard + Integer.parseInt(amountValue), dashboardPage.getFirstCardBalance());
         assertEquals(balanceSecondCard - Integer.parseInt(amountValue), dashboardPage.getSecondCardBalance());
