@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/46smx56o7m57pa86?svg=true)](https://ci.appveyor.com/project/SemKu/page-object-s)
