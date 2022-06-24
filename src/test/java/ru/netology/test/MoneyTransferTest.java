@@ -54,8 +54,6 @@ public class MoneyTransferTest {
     @Test
     void transactionFromSecondToFirstCardAmountOverLimit() {
         val dashboardPage = new DashboardPage();
-        int balanceFirstCard = dashboardPage.getFirstCardBalance();
-        int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val transferPage = dashboardPage.firstBill();
         val infoCard = DataHelper.getSecondCardInfo();
         String amountValue = "20001";

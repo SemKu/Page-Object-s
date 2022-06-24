@@ -16,7 +16,8 @@ public class TransferPage {
     public TransferPage() {
         amount.should(visible);
     }
-    public void getErrorNotification(){
+
+    public void getErrorNotification() {
         errorNotification.should(Condition.visible);
     }
 
