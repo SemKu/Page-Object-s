@@ -45,10 +45,21 @@ public class MoneyTransferTest {
         int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val transferPage = dashboardPage.firstBill();
         val infoCard = DataHelper.getSecondCardInfo();
-        String amountValue = "20001";
+        String amountValue = "10000";
         transferPage.transfer(amountValue, infoCard);
         assertEquals(balanceFirstCard + Integer.parseInt(amountValue), dashboardPage.getFirstCardBalance());
         assertEquals(balanceSecondCard - Integer.parseInt(amountValue), dashboardPage.getSecondCardBalance());
     }
 
+    @Test
+    void transactionFromSecondToFirstCardAmountOverLimit() {
+        val dashboardPage = new DashboardPage();
+        int balanceFirstCard = dashboardPage.getFirstCardBalance();
+        int balanceSecondCard = dashboardPage.getSecondCardBalance();
+        val transferPage = dashboardPage.firstBill();
+        val infoCard = DataHelper.getSecondCardInfo();
+        String amountValue = "20001";
+        transferPage.transfer(amountValue, infoCard);
+        transferPage.getErrorNotification();
+    }
 }
