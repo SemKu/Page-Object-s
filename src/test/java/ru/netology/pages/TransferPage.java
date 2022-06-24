@@ -1,5 +1,6 @@
 package ru.netology.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
@@ -10,9 +11,13 @@ public class TransferPage {
     private SelenideElement amount = $("[data-test-id=amount] input");
     private SelenideElement billFrom = $("[data-test-id=from] input");
     private SelenideElement buttonTransfer = $("[data-test-id=action-transfer] .button__content");
+    private SelenideElement errorNotification = $("[data-test-id=error-notification] .notification__content");
 
     public TransferPage() {
         amount.should(visible);
+    }
+    public void getErrorNotification(){
+        errorNotification.should(Condition.visible);
     }
 
     public void transfer(String amountValue, DataHelper.CardInfo cardInfo) {
